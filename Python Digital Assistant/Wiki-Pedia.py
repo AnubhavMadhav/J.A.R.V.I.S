@@ -2,4 +2,7 @@ import wikipedia
 
 while True:
     input = input("Question: ")
-    print(wikipedia.summary(input))
+   # wikipedia.set_lang("es")
+    print(wikipedia.summary(input, sentences=2))
+
+    
