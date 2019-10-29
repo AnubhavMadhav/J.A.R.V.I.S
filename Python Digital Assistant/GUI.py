@@ -21,7 +21,7 @@ class MyFrame(wx.Frame):
     def OnEnter(self, event):
         input = self.txt.GetValue()
         input = input.lower()
-        print("It worked!")
+       # print("It worked!")
 
 
 if __name__ == "__main__":
