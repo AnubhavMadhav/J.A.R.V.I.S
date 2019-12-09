@@ -32,7 +32,9 @@ class MyFrame(wx.Frame):
             answer = next(res.results).text
             print(answer)
         except:
-        # wikipedia.set_lang("es")
+           # wikipedia.set_lang("es")
+           # input = input.split(' ')
+           # input = " ".join(input[2:])
             print(wikipedia.summary(input, sentences=2))
 
 
