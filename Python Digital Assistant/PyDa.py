@@ -2,6 +2,7 @@ import wikipedia
 import wolframalpha
 import wx
 import pyttsx3
+import speech_recognition as sr 
 
 engine = pyttsx3.init()
 
@@ -32,6 +33,16 @@ class MyFrame(wx.Frame):
     def OnEnter(self, event):
         input = self.txt.GetValue()
         input = input.lower()
+        if input=='':
+            r = sr.Recognizer()
+            with sr.Microphone() as source:
+                audio = r.listen(source)
+            try:
+                input = self.txt.SetValue(r.recognize_google(audio))
+            except sr.UnknownValueError:
+                print('Google Speech Recognition could not understand audio')
+            except sr.RequestError as e:
+                print('Could not request results from Google Speech Recognition Service; {0}'.format(e))
        # print("It worked!")
         try:
             app_id = "HH23Y3-5645968TGY"
@@ -46,6 +57,8 @@ class MyFrame(wx.Frame):
            # wikipedia.set_lang("es")
            # input = input.split(' ')
            # input = " ".join(input[2:])
+            engine.say('I have searched following for '+ input)
+            engine.runAndWait()
             print(wikipedia.summary(input, sentences=2))
 
 

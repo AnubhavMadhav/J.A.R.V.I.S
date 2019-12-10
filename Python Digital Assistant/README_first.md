@@ -6,4 +6,7 @@ Install the following requirements:
 3) pip install -U wxPython
 4) pip install pyttsx3
 
+To run the application:
+python PyDa.py
+
 Thank You!! 
