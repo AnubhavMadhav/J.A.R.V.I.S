@@ -6,7 +6,7 @@ import speech_recognition as sr
 
 engine = pyttsx3.init()
 
-#
+
 
 class MyFrame(wx.Frame):
     def __init__(self):
@@ -38,28 +38,29 @@ class MyFrame(wx.Frame):
             with sr.Microphone() as source:
                 audio = r.listen(source)
             try:
-                input = self.txt.SetValue(r.recognize_google(audio))
+                self.txt.SetValue(r.recognize_google(audio))
             except sr.UnknownValueError:
                 print('Google Speech Recognition could not understand audio')
             except sr.RequestError as e:
                 print('Could not request results from Google Speech Recognition Service; {0}'.format(e))
        # print("It worked!")
-        try:
-            app_id = "HH23Y3-5645968TGY"
-            client = wolframalpha.Client(app_id)
-            res = client.query(input)
-            answer = next(res.results).text
-            print(answer)
-            engine.say('The answer is '+ answer)
-            engine.runAndWait()
+        else:
+            try:
+                app_id = "HH23Y3-5645968TGY"
+                client = wolframalpha.Client(app_id)
+                res = client.query(input)
+                answer = next(res.results).text
+                print(answer)
+                engine.say('The answer is '+ answer)
+                engine.runAndWait()
            
-        except:
-           # wikipedia.set_lang("es")
-           # input = input.split(' ')
-           # input = " ".join(input[2:])
-            engine.say('I have searched following for '+ input)
-            engine.runAndWait()
-            print(wikipedia.summary(input, sentences=2))
+            except:
+            # wikipedia.set_lang("es")
+            # input = input.split(' ')
+            # input = " ".join(input[2:])
+                engine.say('I have searched following for '+ input)
+                engine.runAndWait()
+                print(wikipedia.summary(input, sentences=2))
 
 
 
