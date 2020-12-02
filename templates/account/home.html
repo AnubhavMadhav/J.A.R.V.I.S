@@ -8,6 +8,11 @@ J.A.R.V.I.S.
 {% endblock title %}
 {% block homeactive %} active {% endblock homeactive %}
 
+{% if user.is_authenticated %}
+ <input class="w3-input w3-center w3-border w3-col link l10" id="links" style="cursor:no-drop" readonly value="https://www.linkedin.com/in/anubhav-madhav/">
+            <button class="w3-col l2 w3-button w3-gray w3-border link2" type="button" style="cursor:copy"
+            onclick="copy()" ><i class="fa fa-copy"></i> Copy</button>
+{% endif %}
 
 
 {% block content %}
