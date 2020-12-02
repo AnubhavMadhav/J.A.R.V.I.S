@@ -6,8 +6,6 @@ import speech_recognition as sr
 
 engine = pyttsx3.init()
 
-
-
 class MyFrame(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self, None,
