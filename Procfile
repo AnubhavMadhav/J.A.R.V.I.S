@@ -1,1 +1,1 @@
-web: gunicorn jarvis.wsgi
+web: gunicorn app:app --log-file=-
