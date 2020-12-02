@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(240, 239, 234, 0.253);
+}
+
+nav {
+    background-color: rgba(39, 38, 38, 0.938)!important;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
+.search {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(56, 55, 55, 0.87)!important;
+    border: none;
+}
