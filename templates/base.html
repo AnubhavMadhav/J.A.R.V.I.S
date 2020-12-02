@@ -224,7 +224,10 @@
 
 
 
-
+ {% if user.is_authenticated %}
+ <input class="w3-input w3-center w3-border w3-col l10" id="links" style="cursor:no-drop" readonly value="Idhar link daalunga mai">
+            <button class="w3-col l2 w3-button w3-gray w3-border" type="button" style="cursor:copy"
+            onclick="copy()" ><i class="fa fa-copy"></i> Copy</button>
 
 
     {% block content %} {% endblock content %}
@@ -235,6 +238,16 @@
     {% endblock js %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+    let copy = () => {
+    
+    let text = document.getElementById("links");
+    text.select();
+    text.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    
+}
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
