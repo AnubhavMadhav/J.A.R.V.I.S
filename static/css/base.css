@@ -25,3 +25,18 @@ a:hover {
     color: rgba(56, 55, 55, 0.87)!important;
     border: none;
 }
+
+.link {
+    position: fixed;
+    /* or absolute */
+    top: 50%;
+    left: 40%;
+    width: 15%;
+}
+
+.link2 {
+    position: fixed;
+    /* or absolute */
+    top: 50%;
+    left: 55%;
+}
