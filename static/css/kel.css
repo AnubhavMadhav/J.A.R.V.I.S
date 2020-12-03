@@ -1,0 +1,6 @@
+#mobile-rec{
+	transition-duration:0.2s;
+}
+#mobile-rec:hover{
+	opacity:0.5;
+}
