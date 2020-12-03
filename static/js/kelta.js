@@ -1,4 +1,3 @@
-
 let context; //for web audio
 let rec_btn = document.getElementById("mobile-rec");
 
@@ -54,74 +53,72 @@ function runRecognition() {
             console.log((similarity(transcript, "Dance please") * 100));
             responsiveVoice.speak("Ok, I will dance for you, music!!!", "UK English Male", { onstart: null, onend: startDance });
 
-        }
-	else if((similarity(transcript, "Open snake game") * 100) > 80){
-		responsiveVoice.speak("Ok, Opening snake game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Snake-Game/", "_blank") });
+        } else if ((similarity(transcript, "Open snake game") * 100) > 80) {
+            responsiveVoice.speak("Ok, Opening snake game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Snake-Game/", "_blank") });
 
-	}else if((similarity(transcript, "Open dude run game") * 100) > 80){
-		responsiveVoice.speak("Ok, Opening dude run game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Dude-Run/", "_blank") });
+        } else if ((similarity(transcript, "Open dude run game") * 100) > 80) {
+            responsiveVoice.speak("Ok, Opening dude run game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Dude-Run/", "_blank") });
 
-	}else if(transcript.includes("message") && transcript.includes("whatsapp")){
-			 
-			//demo string
-                //whatsapp anubhav message hey anumbhav
-                let str = transcript.split(" ");
-                //now we have each words
-                //str[3] is name and after 6 is message
-                let name = str[1];
-                let message = "";
+        } else if (transcript.includes("message") && transcript.includes("WhatsApp")) {
 
-                for (let i = 3; i < str.length; i++) {
+            //demo string
+            //whatsapp anubhav message hey anumbhav
+            let str = transcript.split(" ");
+            //now we have each words
+            //str[3] is name and after 6 is message
+            let name = str[1];
+            let message = "";
 
-                    message += str[i]+" ";
+            for (let i = 3; i < str.length; i++) {
+
+                message += str[i] + " ";
+
+            }
+
+            let parameterYes = {
+                onstart: affermationHead,
+                onend: null
+            }
+            responsiveVoice.speak("Yes sure.", "UK English Male", parameterYes);
+            let xhttp = new XMLHttpRequest();
+            let parameterResThis = {
+                onstart: affermationHead,
+                onend: null
+            }
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    if (this.responseText.includes("not")) {
+                        let parameterResThis = {
+                            onstart: negationHead,
+                            onend: null
+                        }
+
+                        responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
+
+                    } else {
+                        let num = this.responseText;
+                        num = num.replace("+", "");
+                        window.open("https://api.whatsapp.com/send?phone=" + num + "&text=" + message, "_blank");
+                        responsiveVoice.speak("Starting process", "UK English Male", parameterResThis);
+                    }
 
                 }
+            };
+            xhttp.open("GET", "whatsapp?name=" + name + "&message=" + message, true);
+            xhttp.send();
 
-                let parameterYes = {
-                    onstart: affermationHead,
-                    onend: null
-                }
-                responsiveVoice.speak("Yes sure.", "UK English Male", parameterYes);
-               let xhttp = new XMLHttpRequest();
-		let parameterResThis = {
-			onstart: affermationHead,
-			onend:null
-		}
-		
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				
-				if(this.responseText.includes("not")){
-					let parameterResThis = {
-						onstart: negationHead,
-						onend:null
-					}
-					
-					responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
-					
-				}
-				else{
-					let num = this.responseText;
-					num = num.replace("+","");
-					window.open("https://api.whatsapp.com/send?phone="+num+"&text="+message,"_blank");
-					responsiveVoice.speak("Starting process", "UK English Male", parameterResThis);
-				}
-				
-			}
-		};
-		xhttp.open("GET", "whatsapp?name=" + name + "&message=" + message, true);
-		xhttp.send();
-			 
-		}else if(transcript.includes("message") && !transcript.includes("whatsapp")){
-			 
-			 let parameterNo = {
-				onstart: negationHead,
-				onend: null
-			}
-			responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
-			
-			 
-		}else {
+        } else if (transcript.includes("message") && !transcript.includes("WhatsApp")) {
+
+            let parameterNo = {
+                onstart: negationHead,
+                onend: null
+            }
+            responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
+
+
+        } else {
 
             if (transcript.includes("email") && transcript.includes("message")) {
                 //demo string
