@@ -209,3 +209,7 @@ def sendmail(request):
         send_mail(subject, message, from_email, to_list, fail_silently=True)
         
     return HttpResponse(message)
+
+
+def jarvis(request):
+    return render(request, 'index.html')

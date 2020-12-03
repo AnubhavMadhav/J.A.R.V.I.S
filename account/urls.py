@@ -10,4 +10,5 @@ urlpatterns = [
     path('login', views.handleLogin, name='login'),
     path('logout', views.handleLogout, name='logout'),
     path('mail', views.sendmail, name='mail'),
+    path('jarvis', views.jarvis, name='jarvis'),
 ]

@@ -30,15 +30,15 @@ a:hover {
     position: fixed;
     /* or absolute */
     top: 50%;
-    left: 40%;
-    width: 20%;
+    left: 43%;
+    width: 5%;
 }
 
 .link2 {
     position: fixed;
     /* or absolute */
     top: 50%;
-    left: 55%;
+    left: 48%;
 }
 
 @media (max-width: 991px) {
@@ -46,13 +46,13 @@ a:hover {
         position: fixed;
         /* or absolute */
         top: 50%;
-        left: 25%;
-        width: 70%;
+        left: 34%;
+        width: 21%;
     }
     .link2 {
         position: fixed;
         /* or absolute */
         top: 50%;
-        left: 65%;
+        left: 55%;
     }
 }
