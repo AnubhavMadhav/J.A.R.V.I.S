@@ -72,25 +72,10 @@ function runRecognition() {
 
                 let parameterYes = {
                     onstart: affermationHead,
-                    onend: sendMail(name, message)
-                }
-                responsiveVoice.speak("Yes sure.", "UK English Male", parameterYes);
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("demo").innerHTML = this.responseText;
-                    }
-                };
-                xhttp.open("GET", "ajax_info.txt", true);
-                xhttp.send();
-            } else if (transcript.includes("message") && !transcript.includes("email")) {
-                let parameterNo = {
-                    onstart: negationHead,
                     onend: null
                 }
-                responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
-            
-		let xhttp = new XMLHttpRequest();
+                responsiveVoice.speak("Yes sure.", "UK English Male", parameterYes);
+               let xhttp = new XMLHttpRequest();
 		let parameterResThis = {
 			onstart: affermationHead,
 			onend:null
@@ -116,7 +101,13 @@ function runRecognition() {
 		};
 		xhttp.open("GET", "mail?name=Anubhav&message=Hello", true);
 		xhttp.send();
-			
+            } else if (transcript.includes("message") && !transcript.includes("email")) {
+                let parameterNo = {
+                    onstart: negationHead,
+                    onend: null
+                }
+                responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
+		
 		} else {
                 let preMsg = prepareMsg(transcript);
                 let reply = replyMsg(preMsg);
