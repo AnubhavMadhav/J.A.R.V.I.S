@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>J.A.R.V.I.S bot</title>
+<link rel="stylesheet" href="../static/css/w3.css">
+<link rel="stylesheet" href="../static/css/kel.css">
+
+</head>
+<body>
+
+<script src="../static/AFrame/aframe.min.js"></script>
+<script src="../static/AFrame/aframe-extras.loaders.min.js"></script>
+<script src="../static/ARjs/aframe-ar.js"></script>
+<div style='position: fixed; top: 10px; left:0px; width:100%; text-align: center; z-index: 1;'>
+    <button id="mobile-rec" class="w3-button w3-large w3-blue">
+        START RECORDING
+    </button>
+</div>
+<audio id="music" style="display:none" controls>
+  <source src="Assets/Audio/crazy-frog-117-1-43962-[AudioTrimmer.com].mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<a-scene embedded arjs='trackingMethod: best; debugUIEnabled: false'>
+	<a-marker preset="hiro">
+		<!--body -->
+		<a-box position='0 1 0' scale='0.6 0.8 0.5' material='color: red;'>
+			<a-animation
+				id="breath"
+				attribute="position"
+				from="0 1 0"
+				to="0 0.98 0"
+				direction="alternate"
+				dur="500"
+				repeat="indefinite"
+				easing="ease">
+			</a-animation>
+		</a-box>
+	
+	<!--legs -->
+		<!-- left leg -->
+		<a-cylinder id="left-leg" position='0.2 0.1 0' rotation="0 0 0" scale='0.1 1 0.1' material='color:green;'>
+			<a-animation
+				begin="dance-left-leg"
+				attribute="position"
+				from="0.2 0.1 0"
+				to="0.2 0.3 0.2"
+				direction="alternate"
+				dur="250"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="dance-left-leg"
+				attribute="rotation"
+				from="0 0 0"
+				to="-60 0 0"
+				direction="alternate"
+				dur="250"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+		</a-cylinder>
+		<!-- right leg -->
+		<a-cylinder id="right-leg" position='-0.2 0.1 0' rotation="0 0 0" scale='0.1 1 0.1' material='color: green;'>
+			<a-animation
+				begin="dance-right-leg"
+				attribute="position"
+				from="-0.2 0.1 0"
+				to="-0.2 0.3 0.2"
+				direction="alternate"
+				dur="250"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="dance-right-leg"
+				attribute="rotation"
+				from="0 0 0"
+				to="-60 0 0"
+				direction="alternate"
+				dur="250"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+		</a-cylinder>
+	
+	<!--hands -->
+		<!-- left hand -->
+		<a-box id="left-hand" position='0.4 1.2 0' rotation="0 0 -50" scale='0.5 0.1 0.1' material='color: yellow;'>
+			<a-animation
+				begin="explain-left-hand"
+				attribute="position"
+				from="0.4 1.2 0"
+				to="0.4 1.2 0.3"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="explain-left-hand"
+				attribute="rotation"
+				from="0 0 -50"
+				to="0 -60 -50"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="wave-left-hand"
+				attribute="rotation"
+				from="0 0 -50"
+				to="0 0 80"
+				direction="alternate"
+				dur="800"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="wave-left-hand"
+				attribute="position"
+				from="0.4 1.2 0"
+				to="0.4 1.6 0"
+				direction="alternate"
+				dur="800"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+		</a-box>
+		<!-- right hand -->
+		<a-box id="right-hand" position='-0.4 1.2 0' rotation="0 0 50" scale='0.5 0.1 0.1' material='color: yellow;'>
+			<!--<a-animation
+				id="breath-hand-right"
+				attribute="position"
+				from="-0.4 1.2 0"
+				to="-0.4 1.18 0"
+				direction="alternate"
+				dur="500"
+				repeat="indefinite"
+				easing="ease">
+			</a-animation>-->
+			<a-animation
+				begin="explain-right-hand"
+				attribute="position"
+				from="-0.4 1.2 0"
+				to="-0.4 1.2 0.3"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="explain-right-hand"
+				attribute="rotation"
+				from="0 0 50"
+				to="0 60 50"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="wave-right-hand"
+				attribute="rotation"
+				from="0 0 50"
+				to="0 0 -50"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+			<a-animation
+				begin="wave-right-hand"
+				attribute="position"
+				from="-0.4 1.2 0"
+				to="-0.4 1.6 0"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation>
+		</a-box>
+	<!--head -->
+		<a-box id="head" position='0 1.5 0' rotation="-20 0 0" scale='0.3 0.3 0.3' material='color: blue;'>
+			<a-animation
+				begin="affermation-head"
+				attribute="rotation"
+				from="-20 0 0"
+				to="20 0 0"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation> 
+			<a-animation
+				begin="negation-head"
+				attribute="rotation"
+				from="-20 0 0"
+				to="-20 -20 0"
+				direction="alternate"
+				dur="500"
+				repeat="1"
+				easing="ease">
+			</a-animation> 
+			<a-animation
+				begin="dance-head"
+				attribute="position"
+				from="0 1.5 0"
+				to="0 1.5 0.1"
+				direction="alternate"
+				dur="250"
+				repeat="1"
+				easing="ease">
+			</a-animation> 
+			
+		</a-box>
+	
+	</a-marker>
+	 <a-entity camera></a-entity>
+</a-scene>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=enR4dReg"></script>
+<script src="../static/js/functions.js"></script>
+<script src="../static/js/kelta.js"></script>
+<script src="../static/js/keltaAR.js"></script>
+</body>
+</html>
