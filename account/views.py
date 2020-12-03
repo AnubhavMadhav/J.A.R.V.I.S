@@ -202,14 +202,18 @@ def sendmail(request):
         
         mailinguser = Email.objects.get(nm=name)
         
-        subject = "Contact from J.A.R.V.I.S.!!"
-        message = name + " says " + message
+        subject = "Message from J.A.R.V.I.S.!!"
+        message = message
         from_email = settings.EMAIL_HOST_USER
         to_list = [mailinguser.address]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
         
-    return HttpResponse(message)
-
+    return HttpResponse("mail sent to " + name)
+    # return HttpResponse('Hello')
 
 def jarvis(request):
     return render(request, 'index.html')
+
+
+def trial(request):
+    return render(request, 'mail.html')
