@@ -200,6 +200,8 @@ def sendmail(request):
         
         message = request.GET['message']
         
+        # return HttpResponse(name)
+        
         if Email.objects.filter(nm = name).exists() :
             
             mailinguser = Email.objects.get(nm=name)
@@ -212,6 +214,7 @@ def sendmail(request):
             return HttpResponse("mail sent to " + name)
     
     return HttpResponse("User does not exist in our database")
+    # return HttpResponse("OK")
 
 def jarvis(request):
     return render(request, 'index.html')
