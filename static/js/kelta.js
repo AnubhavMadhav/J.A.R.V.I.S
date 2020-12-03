@@ -44,16 +44,23 @@ function runRecognition() {
             responsiveVoice.speak("Opening GitHub", "UK English Male", { onstart: null, onend: openGitHub });
 
         } else if ((similarity(transcript, "Open Google") * 100) > 80) {
-            console.log((similarity(transcript, "Open GitHub") * 100));
+            console.log((similarity(transcript, "Open Google") * 100));
             responsiveVoice.speak("Opening Google", "UK English Male", { onstart: null, onend: openGoogle });
         } else if ((similarity(transcript, "Open ipl") * 100) > 80) {
-            console.log((similarity(transcript, "Open GitHub") * 100));
+            console.log((similarity(transcript, "Open ipl") * 100));
             responsiveVoice.speak("Opening ipl", "UK English Male", { onstart: null, onend: openIpl });
         } else if ((similarity(transcript, "Dance please") * 100) > 80) {
-            console.log((similarity(transcript, "Open GitHub") * 100));
+            console.log((similarity(transcript, "Dance please") * 100));
             responsiveVoice.speak("Ok, I will dance for you, music!!!", "UK English Male", { onstart: null, onend: startDance });
 
-        } else {
+        }
+	else if((similarity(transcript, "Open snake game") * 100) > 80){
+		responsiveVoice.speak("Ok, Opening snake game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Snake-Game/", "_blank") });
+
+	}else if((similarity(transcript, "Open dude run game") * 100) > 80){
+		responsiveVoice.speak("Ok, Opening dude run game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Dude-Run/", "_blank") });
+
+	}else {
 
             if (transcript.includes("email") && transcript.includes("message")) {
                 //demo string
