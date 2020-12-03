@@ -89,7 +89,35 @@ function runRecognition() {
                     onend: null
                 }
                 responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
-            } else {
+            
+		let xhttp = new XMLHttpRequest();
+		let parameterResThis = {
+			onstart: affermationHead,
+			onend:null
+		}
+		
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				
+				if(this.responseText.includes("not")){
+					let parameterResThis = {
+						onstart: negationHead,
+						onend:null
+					}
+					
+					responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
+					
+				}
+				else{
+					responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
+				}
+				
+			}
+		};
+		xhttp.open("GET", "mail?name=Anubhav&message=Hello", true);
+		xhttp.send();
+			
+		} else {
                 let preMsg = prepareMsg(transcript);
                 let reply = replyMsg(preMsg);
 
