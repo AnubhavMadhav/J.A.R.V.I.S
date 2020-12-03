@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 class Contact(models.Model):
@@ -20,4 +21,13 @@ class Email(models.Model):
     
     def __str__(self):
         return 'Email address of ' + self.nm + ' is ' + self.address
+    
+    
+class WhatsApp(models.Model):
+    cid = models.AutoField(primary_key=True)
+    contact = models.CharField(max_length=100)
+    number = PhoneNumberField()
+    
+    def __str__(self):
+        return 'Contact Number of ' + self.contact + ' is ' + str(self.number)
     
