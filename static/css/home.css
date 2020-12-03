@@ -74,6 +74,41 @@ footer p {
     font-size: 12px!important;
 }
 
+.jarvis {
+    position: relative;
+    height: 400px;
+    width: 100px;
+}
+
+.link {
+    position: fixed;
+    /* or absolute */
+    top: 50%;
+    left: 43%;
+    width: 7%;
+}
+
+.link2 {
+    position: fixed;
+    /* or absolute */
+    top: 50%;
+    left: 48%;
+    visibility: hidden;
+}
+
+.tag {
+    position: relative;
+    top: 20px;
+    left: 45%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 34%;
+}
+
 @media (max-width: 991px) {
     .author-pic {
         border-radius: 50%!important;
@@ -87,5 +122,35 @@ footer p {
     .heading h2 {
         font-size: 25px;
         font-family: 'Source Code Pro', monospace;
+    }
+    .jarvis {
+        position: relative;
+        height: 700px;
+        width: 600px;
+    }
+    .link {
+        position: relative;
+        /* or absolute */
+        top: 20px;
+        left: 41%;
+        width: 25%;
+        margin-top: 10px;
+    }
+    .link2 {
+        position: fixed;
+        /* or absolute */
+        top: 50%;
+        left: 55%;
+        visibility: hidden;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 86%;
+    }
+    .tag {
+        position: relative;
+        top: auto;
     }
 }

@@ -43,10 +43,11 @@ J.A.R.V.I.S.
 <div class="container">
 <main role="main" class="container">
   
+<img class="center jarvis" src="{% static 'img/jarvis.jpeg' %}" alt="">
 
 {% if user.is_authenticated %}
- <input class="w3-input w3-center w3-border w3-col link l10" id="links" style="cursor:alias" readonly onclick="window.open('https://jarvis-iiitv.herokuapp.com/jarvis','_blank')" value="Click Here">
-            <button class="w3-col l2 w3-button w3-gray w3-border link2" type="button" style="cursor:copy"
+ <input class="w3-input w3-center w3-border w3-col link l10 tag" id="links" style="cursor:alias" readonly onclick="window.open('https://jarvis-iiitv.herokuapp.com/jarvis','_blank')" value="Click Here">
+            <button class="w3-col l2 w3-button w3-gray w3-border link2 tag" type="button" style="cursor:copy"
             onclick="copy()" ><i class="fa fa-copy"></i> Copy</button>
 {% endif %}
 
