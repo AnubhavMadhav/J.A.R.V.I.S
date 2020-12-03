@@ -12,4 +12,5 @@ urlpatterns = [
     path('mail', views.sendmail, name='mail'),
     path('jarvis', views.jarvis, name='jarvis'),
     path('trial', views.trial, name='trial'),
+    path('whatsapp', views.sendWhatsApp, name='whatsapp'),
 ]

@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from . models import Contact, Email
+from . models import Contact, Email, WhatsApp
 from django.contrib import messages
 from django.core.mail import EmailMessage, send_mail
 from django.contrib.auth.models import User
@@ -215,6 +215,27 @@ def sendmail(request):
     
     return HttpResponse("User does not exist in our database")
     # return HttpResponse("OK")
+    
+    
+def sendWhatsApp(request):
+    if request.method=='GET':
+        
+        name = request.GET['name']
+        
+        message = request.GET['message']
+        
+        if WhatsApp.objects.filter(contact = name).exists() :
+            
+            textinguser = WhatsApp.objects.get(contact=name)
+            
+            to_msg = textinguser.number
+            
+        
+            return HttpResponse(str(to_msg))
+    
+    return HttpResponse("User does not exist in our database")
+        
+    
 
 def jarvis(request):
     return render(request, 'index.html')
