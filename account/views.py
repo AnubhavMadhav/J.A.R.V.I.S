@@ -200,16 +200,18 @@ def sendmail(request):
         
         message = request.GET['message']
         
-        mailinguser = Email.objects.get(nm=name)
+        if Email.objects.filter(nm = name).exists() :
+            
+            mailinguser = Email.objects.get(nm=name)
+            subject = "Message from J.A.R.V.I.S.!!"
+            message = message
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [mailinguser.address]
+            send_mail(subject, message, from_email, to_list, fail_silently=True)
         
-        subject = "Message from J.A.R.V.I.S.!!"
-        message = message
-        from_email = settings.EMAIL_HOST_USER
-        to_list = [mailinguser.address]
-        send_mail(subject, message, from_email, to_list, fail_silently=True)
-        
-    return HttpResponse("mail sent to " + name)
-    # return HttpResponse('Hello')
+            return HttpResponse("mail sent to " + name)
+    
+    return HttpResponse("User does not exist in our database")
 
 def jarvis(request):
     return render(request, 'index.html')
