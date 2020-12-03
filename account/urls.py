@@ -9,4 +9,5 @@ urlpatterns = [
     path('activate/<uidb64>/<token>', views.activate, name='activate'),
     path('login', views.handleLogin, name='login'),
     path('logout', views.handleLogout, name='logout'),
+    path('mail', views.sendmail, name='mail'),
 ]

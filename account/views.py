@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from . models import Contact
+from . models import Contact, Email
 from django.contrib import messages
 from django.core.mail import EmailMessage, send_mail
 from django.contrib.auth.models import User
@@ -53,7 +53,6 @@ def contact(request):
             to_list2 = [contact.email]
             
             send_mail(subject2, message2, from_email2, to_list2, fail_silently=True)
-            
             
     return render(request, 'account/contact.html')
 
@@ -190,3 +189,23 @@ def activate(request,uidb64,token):
         return redirect('Home')
     else:
         return render(request,'activation_failed.html')
+    
+    
+    
+    
+def sendmail(request):
+    if request.method=='GET':
+        
+        name = request.GET['name']
+        
+        message = request.GET['message']
+        
+        mailinguser = Email.objects.get(nm=name)
+        
+        subject = "Contact from J.A.R.V.I.S.!!"
+        message = name + " says " + message
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [mailinguser.address]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        
+    return HttpResponse(message)
