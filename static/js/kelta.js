@@ -59,7 +59,11 @@ function runRecognition() {
         } else if ((similarity(transcript, "Open dude run game") * 100) > 80) {
             responsiveVoice.speak("Ok, Opening dude run game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Dude-Run/", "_blank") });
 
-        } else if (transcript.includes("message") && transcript.includes("WhatsApp")) {
+        }
+        else if ((similarity(transcript, "Open yooutube") * 100) > 80) {
+            responsiveVoice.speak("Ok, Opening youtube!!!", "UK English Male", { onstart: null, onend: window.open("https://youtube.com/", "_blank") });
+
+        }else if (transcript.includes("message") && transcript.includes("WhatsApp")) {
 
             //demo string
             //whatsapp anubhav message hey anumbhav
@@ -109,18 +113,8 @@ function runRecognition() {
             xhttp.open("GET", "whatsapp?name=" + name + "&message=" + message, true);
             xhttp.send();
 
-        } else if (transcript.includes("message") && !transcript.includes("WhatsApp")) {
-
-            let parameterNo = {
-                onstart: negationHead,
-                onend: null
-            }
-            responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
-
-
-        } else {
-
-            if (transcript.includes("email") && transcript.includes("message")) {
+        } 
+        else if (transcript.includes("email") && transcript.includes("message")) {
                 //demo string
                 //email anubhav message hey anumbhav
                 let str = transcript.split(" ");
@@ -165,22 +159,32 @@ function runRecognition() {
                 };
                 xhttp.open("GET", "mail?name=" + name + "&message=" + message, true);
                 xhttp.send();
-            } else if (transcript.includes("message") && !transcript.includes("email")) {
+            } 
+        else if (transcript.includes("message") && !transcript.includes("WhatsApp")) {
+
+            let parameterNo = {
+                onstart: negationHead,
+                onend: null
+            }
+            responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
+
+
+        }else if (transcript.includes("message") && !transcript.includes("email")) {
                 let parameterNo = {
                     onstart: negationHead,
                     onend: null
                 }
                 responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
 
-            } else {
-                let preMsg = prepareMsg(transcript);
-                let reply = replyMsg(preMsg);
+            }else {
+             let preMsg = prepareMsg(transcript);
+             let reply = replyMsg(preMsg);
 
-                responsiveVoice.speak(reply, "UK English Male", parameters);
-
-            }
+             responsiveVoice.speak(reply, "UK English Male", parameters);
 
         }
+
+        
 
     };
 
