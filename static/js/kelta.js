@@ -59,11 +59,10 @@ function runRecognition() {
         } else if ((similarity(transcript, "Open dude run game") * 100) > 80) {
             responsiveVoice.speak("Ok, Opening dude run game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Dude-Run/", "_blank") });
 
-        }
-        else if ((similarity(transcript, "Open yooutube") * 100) > 80) {
+        } else if ((similarity(transcript, "Open youtube") * 100) > 80) {
             responsiveVoice.speak("Ok, Opening youtube!!!", "UK English Male", { onstart: null, onend: window.open("https://youtube.com/", "_blank") });
 
-        }else if (transcript.includes("message") && transcript.includes("WhatsApp")) {
+        } else if (transcript.includes("message") && transcript.includes("WhatsApp")) {
 
             //demo string
             //whatsapp anubhav message hey anumbhav
@@ -113,54 +112,52 @@ function runRecognition() {
             xhttp.open("GET", "whatsapp?name=" + name + "&message=" + message, true);
             xhttp.send();
 
-        } 
-        else if (transcript.includes("email") && transcript.includes("message")) {
-                //demo string
-                //email anubhav message hey anumbhav
-                let str = transcript.split(" ");
-                //now we have each words
-                //str[3] is name and after 6 is message
-                let name = str[1];
-                let message = "";
+        } else if (transcript.includes("email") && transcript.includes("message")) {
+            //demo string
+            //email anubhav message hey anumbhav
+            let str = transcript.split(" ");
+            //now we have each words
+            //str[3] is name and after 6 is message
+            let name = str[1];
+            let message = "";
 
-                for (let i = 3; i < str.length; i++) {
+            for (let i = 3; i < str.length; i++) {
 
-                    message += str[i] + " ";
+                message += str[i] + " ";
 
-                }
+            }
 
-                let parameterYes = {
-                    onstart: affermationHead,
-                    onend: null
-                }
-                responsiveVoice.speak("Yes sure.", "UK English Male", parameterYes);
-                let xhttp = new XMLHttpRequest();
-                let parameterResThis = {
-                    onstart: affermationHead,
-                    onend: null
-                }
+            let parameterYes = {
+                onstart: affermationHead,
+                onend: null
+            }
+            responsiveVoice.speak("Yes sure.", "UK English Male", parameterYes);
+            let xhttp = new XMLHttpRequest();
+            let parameterResThis = {
+                onstart: affermationHead,
+                onend: null
+            }
 
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
 
-                        if (this.responseText.includes("not")) {
-                            let parameterResThis = {
-                                onstart: negationHead,
-                                onend: null
-                            }
-
-                            responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
-
-                        } else {
-                            responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
+                    if (this.responseText.includes("not")) {
+                        let parameterResThis = {
+                            onstart: negationHead,
+                            onend: null
                         }
 
+                        responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
+
+                    } else {
+                        responsiveVoice.speak(this.responseText, "UK English Male", parameterResThis);
                     }
-                };
-                xhttp.open("GET", "mail?name=" + name + "&message=" + message, true);
-                xhttp.send();
-            } 
-        else if (transcript.includes("message") && !transcript.includes("WhatsApp")) {
+
+                }
+            };
+            xhttp.open("GET", "mail?name=" + name + "&message=" + message, true);
+            xhttp.send();
+        } else if (transcript.includes("message") && !transcript.includes("WhatsApp")) {
 
             let parameterNo = {
                 onstart: negationHead,
@@ -169,22 +166,22 @@ function runRecognition() {
             responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
 
 
-        }else if (transcript.includes("message") && !transcript.includes("email")) {
-                let parameterNo = {
-                    onstart: negationHead,
-                    onend: null
-                }
-                responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
+        } else if (transcript.includes("message") && !transcript.includes("email")) {
+            let parameterNo = {
+                onstart: negationHead,
+                onend: null
+            }
+            responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat", "UK English Male", parameterNo);
 
-            }else {
-             let preMsg = prepareMsg(transcript);
-             let reply = replyMsg(preMsg);
+        } else {
+            let preMsg = prepareMsg(transcript);
+            let reply = replyMsg(preMsg);
 
-             responsiveVoice.speak(reply, "UK English Male", parameters);
+            responsiveVoice.speak(reply, "UK English Male", parameters);
 
         }
 
-        
+
 
     };
 
