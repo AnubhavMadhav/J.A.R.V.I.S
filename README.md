@@ -1,9 +1,49 @@
 # J.A.R.V.I.S
-This is a repository for my Project on building a Virtual Personal Assistant for my Computer using python
+## *Just A Rather Very Intelligent System.*
+---
+##  This is a group Summer Design Project for our Semester 5. It is an Augmented Reailty and AI Powered Web App. 
+---
+### Try it out here: [J.A.R.V.I.S.](https://jarvis-iiitv.herokuapp.com/)
+---
+## Team Members: 
+## [Kushang Shah](https://github.com/Kelta-King)  
+## [Pallavi Sharma](https://github.com/Pall123vi)   
+## [Nitesh Pachlashiya](https://github.com/Nitesh7147)
 
+---
 
+## Major Languages:  ![forthebadge](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  &  ![forthebadge](https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white)
+ 
+---
+## Technologies Used: **Augmented Reality** and a bit taste of **Artificial Intelligence**
+---
 
+## Frameworks and Libraries: AR.js and AFrame.
+---
+## Backend:   ![](https://img.shields.io/badge/django%20-%23092E20.svg?&style=for-the-badge&logo=django&logoColor=white)
+---
 
+## Database:    ![](https://img.shields.io/badge/mysql-%2300f.svg?&style=for-the-badge&logo=mysql&logoColor=white)
+---
+## Deployed on:  ![](https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white)
+---
+---
+<!-- 
+>Home Page:
+---
+![](static/img/Screenshot%20(689).png)
 
+---
+> Result Page: (Find yours)
+---
+![](static/img/Screenshot%20(690).png)
 
-nitesh
+---
+> Error 404 Page:
+![](static/img/Screenshot%20(691).png) -->
+
+---
+### Connect with me on LinkedIn: [Anubhav Madhav](https://www.linkedin.com/in/anubhav-madhav/) 
+
+### Thank You!!
+
