@@ -27,7 +27,7 @@
 ---
 ## Deployed on:  ![](https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white)
 ---
----
+<!-- --- -->
 <!-- 
 >Home Page:
 ---
@@ -42,8 +42,9 @@
 > Error 404 Page:
 ![](static/img/Screenshot%20(691).png) -->
 
----
+<!-- --- -->
+
 ### Connect with me on LinkedIn: [Anubhav Madhav](https://www.linkedin.com/in/anubhav-madhav/) 
 
-### Thank You!!
+## Thank You!!
 
