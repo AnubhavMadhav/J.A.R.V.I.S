@@ -5,10 +5,10 @@
 ---
 ### Try it out here: [J.A.R.V.I.S.](https://jarvis-iiitv.herokuapp.com/)
 ---
-## Team Members: 
-## [Kushang Shah](https://github.com/Kelta-King)  
-## [Pallavi Sharma](https://github.com/Pall123vi)   
-## [Nitesh Pachlashiya](https://github.com/Nitesh7147)
+## Teammates: 
+ - ## [Kushang Shah](https://www.linkedin.com/in/kushang-shah-85a250181/)  
+ - ## [Pallavi Sharma](https://www.linkedin.com/in/pallavi11/)   
+ - ## [Nitesh Pachlashiya](https://www.linkedin.com/in/nitesh-pachlashiya-794452199/)
 
 ---
 
