@@ -1,7 +1,7 @@
 # J.A.R.V.I.S
 ## *Just A Rather Very Intelligent System.*
 ---
-##  This is a group Summer Design Project for our Semester 5. It is an Augmented Reailty and AI Powered Web App. 
+##  This is a group Summer Design Project for our Semester 5. It is an Augmented Reality and AI Powered Web App. 
 ---
 ### Try it out here: [J.A.R.V.I.S.](https://jarvis-iiitv.herokuapp.com/)
 ---
@@ -23,7 +23,7 @@
 ## Technologies Used: **Augmented Reality** and a bit taste of **Artificial Intelligence**
 ---
 
-## Frameworks and Libraries: AR.js and A-Frame.
+## Frameworks and Libraries: **AR.js** and **A-Frame**.
 ---
 ## Backend:   ![](https://img.shields.io/badge/django%20-%23092E20.svg?&style=for-the-badge&logo=django&logoColor=white)
 ---
