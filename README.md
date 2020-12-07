@@ -9,6 +9,8 @@
  - ## [Kushang Shah](https://www.linkedin.com/in/kushang-shah-85a250181/)  
  - ## [Pallavi Sharma](https://www.linkedin.com/in/pallavi11/)   
  - ## [Nitesh Pachlashiya](https://www.linkedin.com/in/nitesh-pachlashiya-794452199/)
+---
+## Repository 2 (Majorly AR Part): [Project-AI-AR](https://github.com/Kelta-King/Project-AI-AR)
 
 ---
 
