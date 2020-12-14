@@ -63,7 +63,7 @@ function runRecognition() {
 
         } else if ((similarity(transcript, "Sing a Song for me") * 100) > 80) {
             console.log((similarity(transcript, "Sing a Song for me") * 100));
-            responsiveVoice.speak("Ok, I will sing a very beautiful hindi song for you!!!", "UK English Male", { onstart: null, onend: playMusic3 });
+            responsiveVoice.speak("Ok, I will sing a very beautiful hindi song for you!!!", "UK English Male", { onstart: null, onend: playMusic2 });
 
         } else if ((similarity(transcript, "Open snake game") * 100) > 80) {
             responsiveVoice.speak("Ok, Opening snake game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Snake-Game/", "_blank") });
@@ -209,8 +209,8 @@ function sendMail(name, message) {
 
 //let music  = document.getElementById("music");
 music = new Audio("/static/Assets/Audio/crazy-frog-117-1-43962-[AudioTrimmer.com].mp3");
-music2 = new Audio("/static/Assets/Audio/Namo Namo Music.mp3");
-music3 = new Audio("/static/Assets/Audio/Nazm Nazm.mp3");
+music2 = new Audio("/static/Assets/Audio/Namo-Namo-Music.mp3");
+music3 = new Audio("/static/Assets/Audio/Nazm-Nazm.mp3");
 // music4 = new Audio("/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3");
 
 function startDance() {
@@ -246,7 +246,7 @@ function startDance() {
 
 function playMusic() {
 
-    music2.src = "/static/Assets/Audio/Namo Namo Music.mp3";
+    music2.src = "/static/Assets/Audio/Namo-Namo-Music.mp3";
     window.focus();
     music2.play();
 
@@ -277,7 +277,7 @@ function playMusic() {
 
 function playMusic2() {
 
-    music3.src = "/static/Assets/Audio/Nazm Nazm.mp3";
+    music3.src = "/static/Assets/Audio/Nazm-Nazm.mp3";
     window.focus();
     music3.play();
 
