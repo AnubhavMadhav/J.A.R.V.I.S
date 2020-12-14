@@ -211,7 +211,7 @@ function sendMail(name, message) {
 music = new Audio("/static/Assets/Audio/crazy-frog-117-1-43962-[AudioTrimmer.com].mp3");
 music2 = new Audio("/static/Assets/Audio/Namo Namo Music.mp3");
 music3 = new Audio("/static/Assets/Audio/Nazm Nazm.mp3");
-music4 = new Audio("/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3");
+// music4 = new Audio("/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3");
 
 function startDance() {
 
@@ -306,36 +306,36 @@ function playMusic2() {
 
 }
 
-function playMusic3() {
+// function playMusic3() {
 
-    music4.src = "/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3";
-    window.focus();
-    music4.play();
+//     music4.src = "/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3";
+//     window.focus();
+//     music4.play();
 
-    let i = 0;
+//     let i = 0;
 
-    let yo = setInterval(function() {
+//     let yo = setInterval(function() {
 
-        i++;
-        danceHead();
-        if (i % 5 == 0) {
-            waveLeftHand();
-            waveRightHand();
-        }
-        if (i % 2 == 0) {
-            danceLeftLeg();
-        } else {
-            danceRightLeg();
-        }
+//         i++;
+//         danceHead();
+//         if (i % 5 == 0) {
+//             waveLeftHand();
+//             waveRightHand();
+//         }
+//         if (i % 2 == 0) {
+//             danceLeftLeg();
+//         } else {
+//             danceRightLeg();
+//         }
 
-        if (i >= 257) {
-            music.pause();
-            clearInterval(yo);
-        }
+//         if (i >= 257) {
+//             music.pause();
+//             clearInterval(yo);
+//         }
 
-    }, 500);
+//     }, 500);
 
-}
+// }
 
 music.onplay = function() {
     console.log("Music has started to play");
