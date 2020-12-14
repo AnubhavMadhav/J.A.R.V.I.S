@@ -55,7 +55,7 @@ function runRecognition() {
 
         } else if ((similarity(transcript, "Play Music") * 100) > 80) {
             console.log((similarity(transcript, "Play Music") * 100));
-            responsiveVoice.speak("Ok, here is a soothing music Namo Namo!!!", "UK English Male", { onstart: null, onend: playMusic });
+            responsiveVoice.speak("Ok, here is a soothing music Nazm Nazm!!!", "UK English Male", { onstart: null, onend: playMusic });
 
         } else if ((similarity(transcript, "Play Nazm Nazm") * 100) > 80) {
             console.log((similarity(transcript, "Play Nazm Nazm") * 100));
