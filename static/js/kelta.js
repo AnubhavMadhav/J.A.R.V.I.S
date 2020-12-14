@@ -209,7 +209,7 @@ function sendMail(name, message) {
 
 //let music  = document.getElementById("music");
 music = new Audio("/static/Assets/Audio/crazy-frog-117-1-43962-[AudioTrimmer.com].mp3");
-music2 = new Audio("/static/Assets/Audio/Namo-Namo-Music.mp3");
+music2 = new Audio("/static/Assets/Audio/Nazm-Nazm.mp3");
 music3 = new Audio("/static/Assets/Audio/Nazm-Nazm.mp3");
 // music4 = new Audio("/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3");
 
@@ -246,7 +246,7 @@ function startDance() {
 
 function playMusic() {
 
-    music2.src = "/static/Assets/Audio/Namo-Namo-Music.mp3";
+    music2.src = "/static/Assets/Audio/Nazm-Nazm.mp3";
     window.focus();
     music2.play();
 
