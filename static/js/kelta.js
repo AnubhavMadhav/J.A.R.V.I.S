@@ -53,6 +53,18 @@ function runRecognition() {
             console.log((similarity(transcript, "Dance please") * 100));
             responsiveVoice.speak("Ok, I will dance for you, music!!!", "UK English Male", { onstart: null, onend: startDance });
 
+        } else if ((similarity(transcript, "Play Music") * 100) > 80) {
+            console.log((similarity(transcript, "Play Music") * 100));
+            responsiveVoice.speak("Ok, here is a soothing music Namo Namo!!!", "UK English Male", { onstart: null, onend: playMusic });
+
+        } else if ((similarity(transcript, "Play Nazm Nazm") * 100) > 80) {
+            console.log((similarity(transcript, "Play Nazm Nazm") * 100));
+            responsiveVoice.speak("Ok, Playing Nazm Nazm!!!", "UK English Male", { onstart: null, onend: playMusic2 });
+
+        } else if ((similarity(transcript, "Sing a Song for me") * 100) > 80) {
+            console.log((similarity(transcript, "Sing a Song for me") * 100));
+            responsiveVoice.speak("Ok, I will sing a very beautiful hindi song for you!!!", "UK English Male", { onstart: null, onend: playMusic3 });
+
         } else if ((similarity(transcript, "Open snake game") * 100) > 80) {
             responsiveVoice.speak("Ok, Opening snake game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Snake-Game/", "_blank") });
 
@@ -197,6 +209,9 @@ function sendMail(name, message) {
 
 //let music  = document.getElementById("music");
 music = new Audio("/static/Assets/Audio/crazy-frog-117-1-43962-[AudioTrimmer.com].mp3");
+music2 = new Audio("/static/Assets/Audio/Namo Namo Music.mp3");
+music3 = new Audio("/static/Assets/Audio/Nazm Nazm.mp3");
+music4 = new Audio("/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3");
 
 function startDance() {
 
@@ -221,6 +236,99 @@ function startDance() {
         }
 
         if (i >= 52) {
+            music.pause();
+            clearInterval(yo);
+        }
+
+    }, 500);
+
+}
+
+function playMusic() {
+
+    music2.src = "/static/Assets/Audio/Namo Namo Music.mp3";
+    window.focus();
+    music2.play();
+
+    let i = 0;
+
+    let yo = setInterval(function() {
+
+        i++;
+        danceHead();
+        if (i % 5 == 0) {
+            waveLeftHand();
+            waveRightHand();
+        }
+        if (i % 2 == 0) {
+            danceLeftLeg();
+        } else {
+            danceRightLeg();
+        }
+
+        if (i >= 257) {
+            music.pause();
+            clearInterval(yo);
+        }
+
+    }, 500);
+
+}
+
+function playMusic2() {
+
+    music3.src = "/static/Assets/Audio/Nazm Nazm.mp3";
+    window.focus();
+    music3.play();
+
+    let i = 0;
+
+    let yo = setInterval(function() {
+
+        i++;
+        danceHead();
+        if (i % 5 == 0) {
+            waveLeftHand();
+            waveRightHand();
+        }
+        if (i % 2 == 0) {
+            danceLeftLeg();
+        } else {
+            danceRightLeg();
+        }
+
+        if (i >= 163) {
+            music.pause();
+            clearInterval(yo);
+        }
+
+    }, 500);
+
+}
+
+function playMusic3() {
+
+    music4.src = "/static/Assets/Audio/Yahin Hoon Main and Mera Mann.mp3";
+    window.focus();
+    music4.play();
+
+    let i = 0;
+
+    let yo = setInterval(function() {
+
+        i++;
+        danceHead();
+        if (i % 5 == 0) {
+            waveLeftHand();
+            waveRightHand();
+        }
+        if (i % 2 == 0) {
+            danceLeftLeg();
+        } else {
+            danceRightLeg();
+        }
+
+        if (i >= 257) {
             music.pause();
             clearInterval(yo);
         }
