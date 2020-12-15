@@ -19,6 +19,7 @@
 ## Preview:
 <img src="view.gif" width="250" height="340"/>
 ---
+
 ## **How to use**: 
 ### - Create your account [here](https://jarvis-iiitv.herokuapp.com/).
 ### - Confirm your email address in order to get your account activated.
@@ -40,6 +41,8 @@
 ### - "WhatsApp <name_here> Message <content_here>"
 ### - "Email <name_here> Message <content_here>"
 ### - "Sing a Song for me" or "Play Music"
+---
+### Note: For now, emails and WhatsApp messages can only be sent to the people added in our database. If you want your name to be added, contact us [here](https://jarvis-iiitv.herokuapp.com/contact)
 ---
 ## **Major Languages**:  ![forthebadge](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  &  ![forthebadge](https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white)
  
