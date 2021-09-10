@@ -9,5 +9,5 @@ phonenumbers==8.12.13
 psycopg2==2.8.6
 pytz==2020.4
 six==1.15.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 whitenoise==5.2.0
